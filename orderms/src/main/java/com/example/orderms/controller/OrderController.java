@@ -33,7 +33,7 @@ public class OrderController {
         var pageOrderResponse =
                 orderService.findAllByCustomerId(customerId, paginaRequest);
 
-        var totalOnOrders = orderService.findTotalByCustomerId(customerId);
+        var totalOnOrders = orderService.findTotalOnOrdersByCustomerId(customerId);
 
         return ResponseEntity.ok(new ApiResponse<>(
                 Map.of("totalOnOrders", totalOnOrders),
