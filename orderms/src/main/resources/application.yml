@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: orderms
+
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: btgpactualdb
+      auto-index-creation: true
+      username: admin
+      password: "123"
+      authentication-database: admin
+
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+management:
+  endpoints:
+    enabled-by-default: false
+    web:
+      exposure:
+        include: "health,prometheus"
+  endpoint:
+    health:
+      enabled: true
+      show-details: always
+    prometheus:
+      enabled: true
